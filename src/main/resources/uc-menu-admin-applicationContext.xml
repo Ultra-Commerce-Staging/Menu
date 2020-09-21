@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   #%L
-  BroadleafCommerce Menu
+  UltraCommerce Menu
   %%
-  Copyright (C) 2009 - 2016 Broadleaf Commerce
+  Copyright (C) 2009 - 2016 Ultra Commerce
   %%
-  Licensed under the Broadleaf Fair Use License Agreement, Version 1.0
-  (the "Fair Use License" located  at http://license.broadleafcommerce.org/fair_use_license-1.0.txt)
-  unless the restrictions on use therein are violated and require payment to Broadleaf in which case
-  the Broadleaf End User License Agreement (EULA), Version 1.1
-  (the "Commercial License" located at http://license.broadleafcommerce.org/commercial_license-1.1.txt)
+  Licensed under the Ultra Fair Use License Agreement, Version 1.0
+  (the "Fair Use License" located  at http://license.ultracommerce.org/fair_use_license-1.0.txt)
+  unless the restrictions on use therein are violated and require payment to Ultra in which case
+  the Ultra End User License Agreement (EULA), Version 1.1
+  (the "Commercial License" located at http://license.ultracommerce.org/commercial_license-1.1.txt)
   shall apply.
   
   Alternatively, the Commercial License may be replaced with a mutually agreed upon license (the "Custom License")
-  between you and Broadleaf Commerce. You may not use this file except in compliance with the applicable license.
+  between you and Ultra Commerce. You may not use this file except in compliance with the applicable license.
   #L%
   -->
 
@@ -21,21 +21,21 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop"
-       xmlns:mo="http://schema.broadleafcommerce.org/mo"
+       xmlns:mo="http://schema.ultracommerce.org/mo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop.xsd
-        http://schema.broadleafcommerce.org/mo
-        http://schema.broadleafcommerce.org/mo/mo-3.0.xsd">
+        http://schema.ultracommerce.org/mo
+        http://schema.ultracommerce.org/mo/mo-3.0.xsd">
 
-    <context:component-scan base-package="org.broadleafcommerce.menu.admin">
-        <context:exclude-filter type="regex" expression="org.broadleafcommerce.menu.admin.web.*"/>
+    <context:component-scan base-package="com.ultracommerce.menu.admin">
+        <context:exclude-filter type="regex" expression="com.ultracommerce.menu.admin.web.*"/>
     </context:component-scan>
 
-    <bean id="blMessageSourceBaseNames-menu" class="org.springframework.beans.factory.config.ListFactoryBean">
+    <bean id="ucMessageSourceBaseNames-menu" class="org.springframework.beans.factory.config.ListFactoryBean">
         <property name="sourceList">
             <list>
                 <value>classpath:/messages/Menu</value>
@@ -43,12 +43,12 @@
         </property>
     </bean>
 
-    <bean class="org.broadleafcommerce.common.extensibility.context.merge.LateStageMergeBeanPostProcessor">
-        <property name="collectionRef" value="blMessageSourceBaseNames-menu" />
-        <property name="targetRef" value="blMessageSourceBaseNames" />
+    <bean class="com.ultracommerce.common.extensibility.context.merge.LateStageMergeBeanPostProcessor">
+        <property name="collectionRef" value="ucMessageSourceBaseNames-menu" />
+        <property name="targetRef" value="ucMessageSourceBaseNames" />
     </bean>
 
-    <bean id="blMenuJsLocations" class="org.springframework.beans.factory.config.ListFactoryBean" >
+    <bean id="ucMenuJsLocations" class="org.springframework.beans.factory.config.ListFactoryBean" >
         <property name="sourceList">
             <list>
                 <value>classpath:/menu/js/</value>
@@ -56,12 +56,12 @@
         </property>
     </bean>
 
-    <bean class="org.broadleafcommerce.common.extensibility.context.merge.LateStageMergeBeanPostProcessor">
-        <property name="collectionRef" value="blMenuJsLocations" />
-        <property name="targetRef" value="blJsLocations" />
+    <bean class="com.ultracommerce.common.extensibility.context.merge.LateStageMergeBeanPostProcessor">
+        <property name="collectionRef" value="ucMenuJsLocations" />
+        <property name="targetRef" value="ucJsLocations" />
     </bean>
 
-    <bean id="blMenuAdminJsFileList" class="org.springframework.beans.factory.config.ListFactoryBean">
+    <bean id="ucMenuAdminJsFileList" class="org.springframework.beans.factory.config.ListFactoryBean">
         <property name="sourceList">
             <list>
                 <value>admin/menuItem.js</value>
@@ -69,22 +69,22 @@
         </property>
     </bean>
 
-    <bean class="org.broadleafcommerce.common.extensibility.context.merge.LateStageMergeBeanPostProcessor">
-        <property name="collectionRef" value="blMenuAdminJsFileList"/>
-        <property name="targetRef" value="blJsFileList"/>
+    <bean class="com.ultracommerce.common.extensibility.context.merge.LateStageMergeBeanPostProcessor">
+        <property name="collectionRef" value="ucMenuAdminJsFileList"/>
+        <property name="targetRef" value="ucJsFileList"/>
     </bean>
 
-    <bean id="blCustomPersistenceHandlers-menu" class="org.springframework.beans.factory.config.ListFactoryBean" scope="prototype">
+    <bean id="ucCustomPersistenceHandlers-menu" class="org.springframework.beans.factory.config.ListFactoryBean" scope="prototype">
         <property name="sourceList">
             <list>
-                <ref bean="blMenuItemCustomPersistenceHandler"/>
+                <ref bean="ucMenuItemCustomPersistenceHandler"/>
             </list>
         </property>
     </bean>
 
-    <bean class="org.broadleafcommerce.common.extensibility.context.merge.LateStageMergeBeanPostProcessor">
-        <property name="collectionRef" value="blCustomPersistenceHandlers-menu"/>
-        <property name="targetRef" value="blCustomPersistenceHandlers"/>
+    <bean class="com.ultracommerce.common.extensibility.context.merge.LateStageMergeBeanPostProcessor">
+        <property name="collectionRef" value="ucCustomPersistenceHandlers-menu"/>
+        <property name="targetRef" value="ucCustomPersistenceHandlers"/>
     </bean>
 
 </beans>

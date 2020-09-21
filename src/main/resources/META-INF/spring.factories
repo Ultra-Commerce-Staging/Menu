@@ -1,2 +1,2 @@
-org.broadleafcommerce.common.module.BroadleafModuleRegistration=org.broadleafcommerce.menu.config.MenuModuleRegistration
-org.broadleafcommerce.common.config.FrameworkCommonClasspathPropertySource=org.broadleafcommerce.menu.config.MenuProperties
+com.ultracommerce.common.module.UltraModuleRegistration=com.ultracommerce.menu.config.MenuModuleRegistration
+com.ultracommerce.common.config.FrameworkCommonClasspathPropertySource=com.ultracommerce.menu.config.MenuProperties

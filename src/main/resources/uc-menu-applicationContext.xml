@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   #%L
-  BroadleafCommerce Menu
+  UltraCommerce Menu
   %%
-  Copyright (C) 2009 - 2016 Broadleaf Commerce
+  Copyright (C) 2009 - 2016 Ultra Commerce
   %%
-  Licensed under the Broadleaf Fair Use License Agreement, Version 1.0
-  (the "Fair Use License" located  at http://license.broadleafcommerce.org/fair_use_license-1.0.txt)
-  unless the restrictions on use therein are violated and require payment to Broadleaf in which case
-  the Broadleaf End User License Agreement (EULA), Version 1.1
-  (the "Commercial License" located at http://license.broadleafcommerce.org/commercial_license-1.1.txt)
+  Licensed under the Ultra Fair Use License Agreement, Version 1.0
+  (the "Fair Use License" located  at http://license.ultracommerce.org/fair_use_license-1.0.txt)
+  unless the restrictions on use therein are violated and require payment to Ultra in which case
+  the Ultra End User License Agreement (EULA), Version 1.1
+  (the "Commercial License" located at http://license.ultracommerce.org/commercial_license-1.1.txt)
   shall apply.
   
   Alternatively, the Commercial License may be replaced with a mutually agreed upon license (the "Custom License")
-  between you and Broadleaf Commerce. You may not use this file except in compliance with the applicable license.
+  between you and Ultra Commerce. You may not use this file except in compliance with the applicable license.
   #L%
   -->
 
@@ -26,21 +26,21 @@
     <!-- All non-weave related configuration for this module belongs here -->
 
     <!-- Scan the module -->
-    <context:component-scan base-package="org.broadleafcommerce.menu">
-        <context:exclude-filter type="regex" expression="org.broadleafcommerce.menu.admin.*"/>
+    <context:component-scan base-package="com.ultracommerce.menu">
+        <context:exclude-filter type="regex" expression="com.ultracommerce.menu.admin.*"/>
     </context:component-scan>
 
     <!--  Add New TranslatedEntity Types -->
-    <bean class="org.broadleafcommerce.common.i18n.domain.TranslatedEntity">
-        <constructor-arg index="0" value="org.broadleafcommerce.menu.domain.Menu"/>
+    <bean class="com.ultracommerce.common.i18n.domain.TranslatedEntity">
+        <constructor-arg index="0" value="com.ultracommerce.menu.domain.Menu"/>
         <constructor-arg index="1" value="Menu"/>
     </bean>
-    <bean class="org.broadleafcommerce.common.i18n.domain.TranslatedEntity">
-        <constructor-arg index="0" value="org.broadleafcommerce.menu.domain.MenuItem"/>
+    <bean class="com.ultracommerce.common.i18n.domain.TranslatedEntity">
+        <constructor-arg index="0" value="com.ultracommerce.menu.domain.MenuItem"/>
         <constructor-arg index="1" value="MenuItem"/>
     </bean>
     
-    <bean id="blMergedPersistenceXmlLocations-menu" class="org.springframework.beans.factory.config.ListFactoryBean">
+    <bean id="ucMergedPersistenceXmlLocations-menu" class="org.springframework.beans.factory.config.ListFactoryBean">
         <property name="sourceList">
             <list>
                 <value>classpath*:/META-INF/persistence-menu.xml</value>
@@ -48,35 +48,35 @@
         </property>
     </bean>
 
-    <bean class="org.broadleafcommerce.common.extensibility.context.merge.EarlyStageMergeBeanPostProcessor">
-        <property name="collectionRef" value="blMergedPersistenceXmlLocations-menu"/>
-        <property name="targetRef" value="blMergedPersistenceXmlLocations"/>
+    <bean class="com.ultracommerce.common.extensibility.context.merge.EarlyStageMergeBeanPostProcessor">
+        <property name="collectionRef" value="ucMergedPersistenceXmlLocations-menu"/>
+        <property name="targetRef" value="ucMergedPersistenceXmlLocations"/>
     </bean>
     
-    <bean id="blMergedEntityContexts-menu" class="org.springframework.beans.factory.config.ListFactoryBean">
+    <bean id="ucMergedEntityContexts-menu" class="org.springframework.beans.factory.config.ListFactoryBean">
         <property name="sourceList">
             <list>
-                <value>classpath:bl-menu-applicationContext-entity.xml</value>
+                <value>classpath:uc-menu-applicationContext-entity.xml</value>
             </list>
         </property>
     </bean>
 
-    <bean class="org.broadleafcommerce.common.extensibility.context.merge.EarlyStageMergeBeanPostProcessor">
-        <property name="collectionRef" value="blMergedEntityContexts-menu"/>
-        <property name="targetRef" value="blMergedEntityContexts"/>
+    <bean class="com.ultracommerce.common.extensibility.context.merge.EarlyStageMergeBeanPostProcessor">
+        <property name="collectionRef" value="ucMergedEntityContexts-menu"/>
+        <property name="targetRef" value="ucMergedEntityContexts"/>
     </bean>
 
-    <bean p:order="2100" id="blMenuCopier" class="org.broadleafcommerce.menu.copy.MenuCopier" />
-    <bean id="blMenuProfileSiteCopiers" class="org.springframework.beans.factory.config.ListFactoryBean">
+    <bean p:order="2100" id="ucMenuCopier" class="com.ultracommerce.menu.copy.MenuCopier" />
+    <bean id="ucMenuProfileSiteCopiers" class="org.springframework.beans.factory.config.ListFactoryBean">
         <property name="sourceList">
             <list>
-                <ref bean="blMenuCopier" />
+                <ref bean="ucMenuCopier" />
             </list>
         </property>
     </bean>
-    <bean class="org.broadleafcommerce.common.extensibility.context.merge.LateStageMergeBeanPostProcessor">
-        <property name="collectionRef" value="blMenuProfileSiteCopiers"/>
-        <property name="targetRef" value="blProfileSiteCopiers"/>
+    <bean class="com.ultracommerce.common.extensibility.context.merge.LateStageMergeBeanPostProcessor">
+        <property name="collectionRef" value="ucMenuProfileSiteCopiers"/>
+        <property name="targetRef" value="ucProfileSiteCopiers"/>
     </bean>
 
 </beans>

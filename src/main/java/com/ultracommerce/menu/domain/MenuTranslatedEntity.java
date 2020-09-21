@@ -1,34 +1,34 @@
 /*
  * #%L
- * BroadleafCommerce Menu
+ * UltraCommerce Menu
  * %%
- * Copyright (C) 2009 - 2016 Broadleaf Commerce
+ * Copyright (C) 2009 - 2016 Ultra Commerce
  * %%
- * Licensed under the Broadleaf Fair Use License Agreement, Version 1.0
- * (the "Fair Use License" located  at http://license.broadleafcommerce.org/fair_use_license-1.0.txt)
- * unless the restrictions on use therein are violated and require payment to Broadleaf in which case
- * the Broadleaf End User License Agreement (EULA), Version 1.1
- * (the "Commercial License" located at http://license.broadleafcommerce.org/commercial_license-1.1.txt)
+ * Licensed under the Ultra Fair Use License Agreement, Version 1.0
+ * (the "Fair Use License" located  at http://license.ultracommerce.org/fair_use_license-1.0.txt)
+ * unless the restrictions on use therein are violated and require payment to Ultra in which case
+ * the Ultra End User License Agreement (EULA), Version 1.1
+ * (the "Commercial License" located at http://license.ultracommerce.org/commercial_license-1.1.txt)
  * shall apply.
  * 
  * Alternatively, the Commercial License may be replaced with a mutually agreed upon license (the "Custom License")
- * between you and Broadleaf Commerce. You may not use this file except in compliance with the applicable license.
+ * between you and Ultra Commerce. You may not use this file except in compliance with the applicable license.
  * #L%
  */
-package org.broadleafcommerce.menu.domain;
+package com.ultracommerce.menu.domain;
 
-import org.broadleafcommerce.common.i18n.domain.TranslatedEntity;
+import com.ultracommerce.common.i18n.domain.TranslatedEntity;
 import org.springframework.stereotype.Component;
 
 /**
  * @author Elbert Bautista (elbertbautista)
  */
-@Component("blMenuTranslatedEntity")
+@Component("ucMenuTranslatedEntity")
 public class MenuTranslatedEntity extends TranslatedEntity {
 
     private static final long serialVersionUID = -1;
 
-    public static final TranslatedEntity MENU = new TranslatedEntity("org.broadleafcommerce.menu.domain.Menu", "Menu");
-    public static final TranslatedEntity MENU_ITEM = new TranslatedEntity("org.broadleafcommerce.menu.domain.MenuItem", "MenuItem");
+    public static final TranslatedEntity MENU = new TranslatedEntity("com.ultracommerce.menu.domain.Menu", "Menu");
+    public static final TranslatedEntity MENU_ITEM = new TranslatedEntity("com.ultracommerce.menu.domain.MenuItem", "MenuItem");
 
 }

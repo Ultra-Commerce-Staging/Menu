@@ -10,7 +10,7 @@
     <artifactId>ultracommerce-menu</artifactId>
     <name>UltraCommerce Menu</name>
     <description>UltraCommerce Menu</description>
-    <version>3.0.2-SNAPSHOT</version>
+    <version>3.0.2-GA</version>
     <properties>
         <ultracommerce.version>6.1.3-GA</ultracommerce.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -20,7 +20,7 @@
         <connection>scm:git:git@github.com:Ultra-Commerce-Staging/Menu.git</connection>
         <developerConnection>scm:git:git@github.com:Ultra-Commerce-Staging/Menu.git</developerConnection>
         <url>https://github.com/Ultra-Commerce-Staging/Menu</url>
-        <tag>HEAD</tag>
+        <tag>ultracommerce-menu-3.0.2-GA</tag>
     </scm>
 
     <url>https://ultracommerce.co</url>
